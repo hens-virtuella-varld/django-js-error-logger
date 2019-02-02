@@ -1,3 +1,13 @@
 from django.db import models
 
-# Create your models here.
+
+class JSError(models.Model):
+    name = models.CharField(max_length=200)
+    appId = models.CharField(max_length=20)
+    user = models.CharField(max_length=20)
+    time = models.DateTimeField()
+    url = models.CharField(max_length=200)
+    status = models.CharField(max_length=200)
+    message = models.CharField(max_length=200)
+    stack = models.TextField(max_length=2000)
+
