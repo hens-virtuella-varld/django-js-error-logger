@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
+from .models import JSError
 
 
 class CreateViewTests(TestCase):
@@ -16,6 +17,7 @@ class CreateViewTests(TestCase):
         }
         response = self.client.post(reverse('js_error_logger:create'), valid_data)
         self.assertEqual(response.status_code, 201)
+        self.assertEqual(JSError.objects.all().count(), 1)
     def test_with_invalid_data(self):
         invalid_data = {}
         response = self.client.post(reverse('js_error_logger:create'), invalid_data)
