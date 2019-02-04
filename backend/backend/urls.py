@@ -18,4 +18,5 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('js_error_logger/', include('js_error_logger.urls')),
 ]
