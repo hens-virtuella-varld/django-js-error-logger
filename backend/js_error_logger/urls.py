@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . imprort views
+from . import views
 
 
 app_name = "js_error_logger"
